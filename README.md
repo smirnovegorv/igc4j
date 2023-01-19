@@ -6,7 +6,7 @@ IGC is widely used by GPS tracking devices and apps used in paragliding, hanggli
 
 Format description can be found [here](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html)
 
-This library supports only a simpel subset of IGC records:
+This library supports only a simple subset of IGC records:
 * Flight timestamp
 * Pilot name
 * Glider id
@@ -37,7 +37,8 @@ After that, you will be able to add igc4j to your dependency list
 implementation("ru.paragliding:igc4j:1.0.0")
 ```
 
-More instructions available at [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)
+More instructions on using GitHub package repository, including Kotlin script examples, are available
+at [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)
 
 ### Parsing IGC
 
@@ -68,3 +69,6 @@ Each point has following properties:
 * `barometricAltitude` - height in meters above 1013.25 HPa sea level datum. May be set to zero if track was recorded on a device without barometric altimeter
 * `gpsAltitude` - altitude in meters above WGS84 ellipsoid, present only if `validity` is set to `A` 
 
+## License
+
+Project is licensed under Apache 2.0 license. See [LICENSE.md](/LICENSE.md)
