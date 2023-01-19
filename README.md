@@ -71,4 +71,4 @@ Each point has following properties:
 
 ## License
 
-Project is licensed under Apache 2.0 license. See [LICENSE.md](/LICENSE.md)
+Project is licensed under Apache 2.0 license. See [license file](/LICENSE)
