@@ -21,10 +21,15 @@ class IGCParserTest {
 
         Assertions.assertEquals(2, track.points.size)
         Assertions.assertEquals("053726", track.points[0].timestampString)
-        Assertions.assertEquals(1082246000, track.points[0].timestamp)
+        Assertions.assertEquals(20246000, track.points[0].timestamp)
         Assertions.assertEquals(Utils.degreesToDecimal(16, 56.53), track.points[0].lat)
         Assertions.assertEquals(Utils.degreesToDecimal(101, 7.754), track.points[0].lon)
 
         Assertions.assertEquals("053810", track.points[1].timestampString)
+    }
+
+    @Test
+    fun testReadInvalidFile() {
+        Assertions.assertThrows(InvalidIGCFormatException::class.java) { IGCParser.parse("Afgg45")}
     }
 }

@@ -11,19 +11,33 @@ data class IGCMetadata(
     var date: String?,
     var pilotName: String?,
     var gliderNumber: String?,
+    var fixAccuracy: String?
 )
 
-data class TrackPoint(
+enum class FixValidity {
+    /**
+     * Valid 3d fix with GPS altitude available
+     */
+    A,
+
+    /**
+     * 2d fix: no GPS altitude
+     */
+    V
+}
+
+data class IGCTrackPoint(
     val timestampString: String,
     val timestamp: Long,
     val lat: Double,
     val lon: Double,
 
-    val barometricAltitude: Double,
-    val gpsAltitude: Double
+    val validity: FixValidity,
+    val barometricAltitude: Int,
+    val gpsAltitude: Int
 )
 
 data class IGCTrack (
     val metadata: IGCMetadata?,
-    val points: List<TrackPoint>
+    val points: List<IGCTrackPoint>
 )
