@@ -60,15 +60,21 @@ object IGCParser {
 
     /**
      * Reads a subset of metadata records (pilot, glider information) that start with H
+     * Some records seem to have different variants depending on logging device, e.g. date may be HFDTE and HFDTEDATE
      */
     private fun readHRecord(metadata: IGCMetadata, record: String) {
-        if (record.startsWith("HFDTE")) {
+        if (record.startsWith("HFDTEDATE:")) {
+            if (record.length < 16) {
+                throw InvalidIGCFormatException("HFDTEDATE record must have 6 date digits, but it is $record")
+            }
+            metadata.date = record.substring(10, 16)
+        } else if (record.startsWith("HFDTE")) {
             if (record.length < 11) {
                 throw InvalidIGCFormatException("HFDTE record must have 6 date digits, but it is $record")
             }
             metadata.date = record.substring(5, 11)
         } else if (record.startsWith("HFPLTPILOTINCHARGE:")) {
-            metadata.pilotName = record.substring(18, record.length).trim()
+            metadata.pilotName = record.substring(19, record.length).trim()
         } else if (record.startsWith("HFPLTPILOT:")) {
             metadata.pilotName = record.substring(11, record.length).trim()
         } else if (record.startsWith("HFCIDCOMPETITIONID:")) {

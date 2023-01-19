@@ -29,6 +29,15 @@ class IGCParserTest {
     }
 
     @Test
+    fun testReadComplex() {
+        val track = IGCParser.parse(javaClass.classLoader.getResourceAsStream("rinat-136km.igc"))
+
+        Assertions.assertEquals(19056, track.points.size)
+        Assertions.assertEquals("Rinat Sabitov", track.metadata!!.pilotName)
+        Assertions.assertEquals("070522", track.metadata!!.date)
+    }
+
+    @Test
     fun testReadInvalidFile() {
         Assertions.assertThrows(InvalidIGCFormatException::class.java) { IGCParser.parse("Afgg45")}
     }
