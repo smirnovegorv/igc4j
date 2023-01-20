@@ -1,5 +1,8 @@
 # IGC4J
 
+[![](https://jitpack.io/v/smirnovegorv/igc4j.svg)](https://jitpack.io/#smirnovegorv/igc4j)
+[![Build and Test](https://github.com/smirnovegorv/igc4j/actions/workflows/gradle.yml/badge.svg)](https://github.com/smirnovegorv/igc4j/actions/workflows/gradle.yml)
+
 A simple JVM-based parser for IGC file format.
 
 IGC is widely used by GPS tracking devices and apps used in paragliding, hanggliding and other soaring flight sports.
