@@ -20,14 +20,14 @@ If you need other IGC records to be parsed - let me know via issues section!
 
 ### Configuring Dependency
 
-Jar file with igc4j is uploaded to GitHub package registry.
+igc4j can be obtained from [jitpack](https://jitpack.io) repository
 
 Add this to your `build.gradle` file:
 
 ```groovy
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/smirnovegorv/igc4j")
+        url = uri("https://jitpack.io")
     }
 }
 ```
@@ -35,11 +35,8 @@ repositories {
 After that, you will be able to add igc4j to your dependency list
 
 ```groovy
-implementation("ru.paragliding:igc4j:1.0.0")
+implementation("com.github.smirnovegorv:igc4j:1.0.0")
 ```
-
-More instructions on using GitHub package repository, including Kotlin script examples, are available
-at [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry)
 
 ### Parsing IGC
 
