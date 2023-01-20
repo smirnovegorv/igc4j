@@ -21,7 +21,7 @@ object IGCParser {
     @Throws(InvalidIGCFormatException::class)
     fun parse(igcStream: InputStream): IGCTrack {
         val points = mutableListOf<IGCTrackPoint>()
-        val metadata = IGCMetadata(null, null, null, null, null)
+        val metadata = IGCMetadata()
         var hasMetadata = false
         BufferedReader(InputStreamReader(igcStream)).use { br ->
             br.lines().filter { !it.isNullOrBlank() }.forEach {
@@ -83,6 +83,8 @@ object IGCParser {
             if (record.length < 8) {
                 throw InvalidIGCFormatException("HFFXA record must have 3 precision digits, but it is $record")
             }
+        } else if (record.startsWith("HFGTYGLIDERTYPE:")) {
+            metadata.gliderType = record.substring(16, record.length).trim()
         }
     }
 

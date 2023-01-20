@@ -10,6 +10,7 @@ This library supports only a simple subset of IGC records:
 * Flight timestamp
 * Pilot name
 * Glider id
+* Glider type
 * Device manufacturer info
 * List of track points
 

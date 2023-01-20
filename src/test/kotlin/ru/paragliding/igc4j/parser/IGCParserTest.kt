@@ -35,6 +35,7 @@ class IGCParserTest {
         Assertions.assertEquals(19056, track.points.size)
         Assertions.assertEquals("Rinat Sabitov", track.metadata!!.pilotName)
         Assertions.assertEquals("070522", track.metadata!!.date)
+        Assertions.assertEquals("DAVINCI Tango", track.metadata!!.gliderType)
     }
 
     @Test
