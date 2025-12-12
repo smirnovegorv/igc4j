@@ -78,13 +78,15 @@ object IGCParser {
         } else if (record.startsWith("HFPLTPILOT:")) {
             metadata.pilotName = record.substring(11, record.length).trim()
         } else if (record.startsWith("HFCIDCOMPETITIONID:")) {
-            metadata.gliderNumber = record.substring(18, record.length).trim()
+            metadata.gliderNumber = record.substring(19, record.length).trim()
         } else if (record.startsWith("HFFXA")) {
             if (record.length < 8) {
                 throw InvalidIGCFormatException("HFFXA record must have 3 precision digits, but it is $record")
             }
         } else if (record.startsWith("HFGTYGLIDERTYPE:")) {
             metadata.gliderType = record.substring(16, record.length).trim()
+        }  else if (record.startsWith("HFCCL")) {
+            metadata.competitionClass = record.substring(22, record.length).trim()
         }
     }
 

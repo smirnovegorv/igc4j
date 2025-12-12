@@ -13,11 +13,13 @@ class IGCParserTest {
         Assertions.assertNotNull(track.metadata)
 
         Assertions.assertEquals("Somnuek", track.metadata!!.pilotName)
-        Assertions.assertEquals("180123", track.metadata!!.date)
-        Assertions.assertNotNull(track.metadata!!.manufacturerInfo)
-        Assertions.assertEquals(track.metadata!!.manufacturerInfo!!.manufacturerCode, "XSX")
-        Assertions.assertEquals(track.metadata!!.manufacturerInfo!!.deviceCode, "004")
-        Assertions.assertEquals(track.metadata!!.manufacturerInfo!!.extension, "SKYTRAXX")
+        Assertions.assertEquals("180123", track.metadata.date)
+        Assertions.assertEquals("B21", track.metadata.gliderNumber)
+        Assertions.assertEquals("15m Motor Glider", track.metadata.competitionClass)
+        Assertions.assertNotNull(track.metadata.manufacturerInfo)
+        Assertions.assertEquals(track.metadata.manufacturerInfo!!.manufacturerCode, "XSX")
+        Assertions.assertEquals(track.metadata.manufacturerInfo!!.deviceCode, "004")
+        Assertions.assertEquals(track.metadata.manufacturerInfo!!.extension, "SKYTRAXX")
 
         Assertions.assertEquals(2, track.points.size)
         Assertions.assertEquals("053726", track.points[0].timestampString)
@@ -34,8 +36,8 @@ class IGCParserTest {
 
         Assertions.assertEquals(19056, track.points.size)
         Assertions.assertEquals("Rinat Sabitov", track.metadata!!.pilotName)
-        Assertions.assertEquals("070522", track.metadata!!.date)
-        Assertions.assertEquals("DAVINCI Tango", track.metadata!!.gliderType)
+        Assertions.assertEquals("070522", track.metadata.date)
+        Assertions.assertEquals("DAVINCI Tango", track.metadata.gliderType)
     }
 
     @Test

@@ -44,6 +44,11 @@ data class IGCMetadata(
     var gliderType: String? = null,
 
     /**
+     * Any free-text description of the class of this glider, e.g. Standard, 15m, Open
+     */
+    var competitionClass: String? = null,
+
+    /**
      * Global GPS accuracy of the device, in meters, from HFFXA record
      */
     var fixAccuracy: String? = null
