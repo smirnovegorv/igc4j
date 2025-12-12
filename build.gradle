@@ -1,11 +1,11 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm' version '2.2.0'
     id 'java'
     id 'maven-publish'
 }
 
 group 'ru.paragliding'
-version '1.0.0'
+version '1.1.0'
 
 repositories {
     mavenCentral()
