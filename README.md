@@ -38,7 +38,7 @@ repositories {
 After that, you will be able to add igc4j to your dependency list
 
 ```groovy
-implementation("com.github.smirnovegorv:igc4j:1.0.0")
+implementation("com.github.smirnovegorv:igc4j:1.1.0")
 ```
 
 ### Parsing IGC
